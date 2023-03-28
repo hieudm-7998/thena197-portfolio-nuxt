@@ -30,7 +30,6 @@ export default {
     methods: {
         showModal(index) {
             this.selectedImage = index;
-            console.log(this.selectedImage)
             this.isModalVisible = true;
         },
         closeModal() {
