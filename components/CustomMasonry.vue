@@ -1,10 +1,10 @@
 <template>
     <div class="grid-wrapper">
         <div v-for="(image, index) in images" :key="index" class="cursor-pointer fade-hover"
-            :class="image.portrait ? 'item tall' : 'item wide'" @click="selectImageIndex(index)">
-            <img :src="image.url" :alt="image.alt" loading="lazy">
+            :class="image.portrait ? 'item tall' : 'item wide'" @click="showModal(index)">
+            <img class="rounded" :src="image.url" :alt="image.alt" loading="lazy">
         </div>
-        <ModalForMasonry :albums="images" :selectedImage="selectedImageIndex" v-show="isModalVisible" @close="closeModal" />
+        <ModalForMasonry :albums="images" :selectedImage.sync="selectedImage" v-show="isModalVisible" @close="closeModal" />
     </div>
 </template>
   
@@ -24,20 +24,18 @@ export default {
     data() {
         return {
             isModalVisible: false,
-            selectedImageIndex: 0
+            selectedImage: null
         };
     },
     methods: {
-        showModal() {
+        showModal(index) {
+            this.selectedImage = index;
+            console.log(this.selectedImage)
             this.isModalVisible = true;
         },
         closeModal() {
             this.isModalVisible = false;
         },
-        selectImageIndex(currentIndex) {
-            this.selectedImageIndex = currentIndex
-            this.isModalVisible = true;
-        }
     }
 };
 </script>

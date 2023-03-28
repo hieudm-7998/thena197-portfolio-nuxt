@@ -1,31 +1,31 @@
 <template>
     <transition name="modal-fade">
-        <div class="modal-backdrop">
-            <div class="modal">
-                <button class="btn-close p-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition"
-                    type="button" @click="close">
-                    <XIcon />
-                </button>
-                <section class="modal-body flex items-center justify-center">
-                    <button type="button"
-                        class="prev-btn absolute p-2 hover:text-slate-600 lg:hover:bg-slate-100 lg:hover:text-slate-800 text-slate-800 bg-white rounded transition">
-                        <ArrowLeftCircleIcon />
+        <v-app>
+            <div class="modal-backdrop">
+                <div class="modal">
+                    <button class="btn-close p-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition"
+                        type="button" @click="close">
+                        <XIcon />
                     </button>
-                    <button type="button"
-                        class="next-btn absolute p-2 hover:text-slate-600 lg:hover:bg-slate-100 lg:hover:text-slate-800 text-slate-800 bg-white rounded transition">
-                        <ArrowRightCircleIcon />
-                    </button>
-                    <slot name="body">
-                        <img class="lg:w-1/3" :src="albums[selectedImage].url" alt="">
-                    </slot>
-                </section>
+                    <section class="modal-body">
+                        <slot name="body">
+                            <v-card>
+                                <v-carousel v-model="selectedImage" max-height="100%" show-arrows hide-delimiters>
+                                    <v-carousel-item contain v-for="(image, i) in albums" :src="image.url" :key="i">
+                                    </v-carousel-item>
+                                </v-carousel>
+                            </v-card>
+                        </slot>
+                    </section>
+                </div>
             </div>
-        </div>
+        </v-app>
     </transition>
 </template>
 
 <script>
-import { XIcon, ArrowLeftCircleIcon, ArrowRightCircleIcon } from 'vue-feather-icons'
+import { XIcon } from 'vue-feather-icons'
+import { Carousel, Slide } from 'vue-carousel';
 export default {
     name: 'ModalForMasonry',
     methods: {
@@ -33,16 +33,13 @@ export default {
             this.$emit('close');
         },
     },
-    components: { XIcon, ArrowLeftCircleIcon, ArrowRightCircleIcon },
+    components: { Carousel, Slide, XIcon },
     props: {
-        selectedImage: {
-            type: String,
-            required: true
-        },
+        selectedImage: Number,
         albums: {
             type: Array,
         }
-    }
+    },
 };
 </script>
 
@@ -103,5 +100,10 @@ export default {
 .modal-fade-enter-active,
 .modal-fade-leave-active {
     transition: opacity .5s ease;
+}
+
+.v-card,
+.vsheet {
+    box-shadow: none !important;
 }
 </style>
