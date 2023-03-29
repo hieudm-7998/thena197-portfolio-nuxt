@@ -1,6 +1,6 @@
 <template>
     <div id="thena197-homepage">
-        <img src="~/static/profile/thena197-profile.jpg" class="rounded w-1/2 md:w-1/6 block mx-auto mb-6" alt="theNa197" />
+        <img src="~/static/profile/thena197-profile.jpg" class="rounded w-1/2 md:w-2/6 block mx-auto mb-6" alt="theNa197" />
         <div class="text-center mb-5">
             <h1 class="uppercase text-2xl tracking-wide font-semibold text-cyan-800 mb-4">
                 Ngoc Anh Nguyen
@@ -13,7 +13,7 @@
                 </a>
             </p>
         </div>
-        <div class="bio handwriting-font italic text-justify">
+        <div class="bio handwriting-font italic text-justify text-lg">
             "But I must explain to you how all this mistaken idea of denouncing
             pleasure and praising pain was born and I will give you a complete
             account of the system, and expound the actual teachings of the great
@@ -36,14 +36,17 @@
 export default {
     name: 'IndexPage',
     transitions: "fade",
+    head() {
+        return { title: `theNa197 | Home` }
+    },
 }
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
 
 body {
-    font-family: 'Krub', sans-serif;
+    font-family: 'Baloo 2', cursive;
 }
 
 .main-color {

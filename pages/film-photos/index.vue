@@ -3,7 +3,7 @@
         <div id="thena197-filmphotos">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="mb-5 gallery-block w-full text-center" v-for="(photo, index) in photos">
-              <NuxtLink :to="`/FilmPhotos/${photo.tag}`">
+              <NuxtLink :to="`/film-photos/${photo.tag}`" class="text-lg hover:text-cyan-800">
                 <img
                   :src="photo.thumbnail"
                   alt=""
@@ -26,6 +26,9 @@ import FilmPhotos from "~/data/FilmPhotos.js"
 export default {
     name: 'FilmPhotos',
     transitions: "fade",
+    head() {
+        return { title: `theNa197 | Film Photos` }
+    },
     data() {
         return {
             photos: FilmPhotos

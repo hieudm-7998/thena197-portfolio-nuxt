@@ -1,9 +1,9 @@
 <template lang="">
     <div>
-        <h2 class="text-center text-2xl text-cyan-800 mb-10 font-bold">
+        <h2 class="text-center text-3xl text-cyan-800 mb-3 font-bold">
             {{filteredAlbum.title}}
         </h2>
-
+        <p class="text-center texl-lg italic text-black mb-10">"{{filteredAlbum.description}}"</p>
         <CustomMasonry :images="filteredAlbum.gallery"></CustomMasonry>
     </div>
 </template>
@@ -13,7 +13,7 @@ import CustomMasonry from '~/components/CustomMasonry.vue';
 
 export default {
     head() {
-        return { title: `TheNa197 | ${this.filteredAlbum.title}` }
+        return { title: `theNa197 | ${this.filteredAlbum.title}` }
     },
     name: 'FilmPhotos',
     transitions: "fade",
@@ -24,7 +24,7 @@ export default {
         }
     },
     created() {
-        const tagAfterReplace = this.$route.path.replace("/FilmPhotos/", '');
+        const tagAfterReplace = this.$route.path.replace("/film-photos/", '');
         this.filteredAlbum = FilmPhotos.find(item => item.tag === tagAfterReplace)
     },
 }

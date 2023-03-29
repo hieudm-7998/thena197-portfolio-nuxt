@@ -22,8 +22,13 @@ module.exports = {
           // xl: "5rem",
           // "2xl": "6rem",
         },
+        colors: {
+          cyan: {
+            800: "#08979D",
+          },
+        },
       },
     },
   },
   plugins: [],
-}
+};
