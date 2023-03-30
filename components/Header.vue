@@ -23,19 +23,6 @@
                     </svg>
                 </NuxtLink>
             </div>
-            <!--<div class="flex justify-center items-center gap-3">
-                <button class="p-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition">
-                    <a href="https://www.facebook.com/ngocanh.nguyen1997" target="_blank">
-                        <FacebookIcon />
-                    </a>
-                </button>
-                <button class="p-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded transition">
-                    <a href="https://www.instagram.com/alittle.na" target="_blank">
-                        <InstagramIcon />
-                    </a>
-                </button>
-
-            </div>-->
         </div>
         <div class="flex items-center justify-between uppercase">
             <NuxtLink class="xl:text-xl" to="/" exact>Home</NuxtLink>
@@ -47,22 +34,20 @@
 </template>
   
 <script>
-import { FacebookIcon, InstagramIcon } from 'vue-feather-icons'
 export default {
     name: "Header",
-    components: {
-        InstagramIcon, FacebookIcon
-    }
 };
 </script>
   
 <style lang="scss">
 .nuxt-link-active {
-    color: black;
+    color: #08979D;
+    border-bottom: 2px solid #08979D;
 }
 
 .nuxt-link-exact-active {
     color: #08979D;
+    border-bottom: 2px solid #08979D;
 }
 
 .svg-wrap {
@@ -79,6 +64,8 @@ export default {
     text-decoration: none;
     position: relative;
     text-align: center;
+    background: none;
+    border: none;
 
     &:hover {
         .button-stroke:nth-child(2) {

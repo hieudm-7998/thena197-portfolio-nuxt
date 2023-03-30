@@ -9,11 +9,11 @@
             <p class="text-gray-700">Hanoi, Vietnam</p>
             <p class="text-gray-700">
                 <a href="mailto:ngocanh123456mc@gmail.com">
-                    zenbabiemc123@gmail.com
+                    ngocanh123456mc@gmail.com
                 </a>
             </p>
         </div>
-        <div class="bio handwriting-font italic text-justify text-lg">
+        <div class="bio handwriting-font italic text-justify text-lg pb-5 border-b-2 border-slate-300">
             "But I must explain to you how all this mistaken idea of denouncing
             pleasure and praising pain was born and I will give you a complete
             account of the system, and expound the actual teachings of the great
@@ -29,16 +29,34 @@
             a man who chooses to enjoy a pleasure that has no annoying consequences,
             or one who avoids a pain that produces no resultant pleasure?"
         </div>
+        <div class="py-5">
+            <h1 class="text-xl text-center text-gray-700 mb-5">Find me at:</h1>
+            <div class="flex gap-2 justify-center items-center">
+                <button class="p-2 text-gray-700 hover:text-cyan-800 hover:bg-slate-200 rounded transition">
+                    <a href="https://www.facebook.com/ngocanh.nguyen1997" target="_blank">
+                        <FacebookIcon />
+                    </a>
+                </button>
+                <button class="p-2 text-gray-700 hover:text-cyan-800 hover:bg-slate-200 rounded transition">
+                    <a href="https://www.instagram.com/thena197" target="_blank">
+                        <InstagramIcon />
+                    </a>
+                </button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import { FacebookIcon, InstagramIcon } from 'vue-feather-icons'
+
 export default {
     name: 'IndexPage',
     transitions: "fade",
     head() {
         return { title: `theNa197 | Home` }
     },
+    components: { FacebookIcon, InstagramIcon }
 }
 </script>
 
