@@ -10,19 +10,35 @@
 </template>
   
 <script>
-import thenaOG from '~/static/profile/thena197-profile.jpg'
 export default {
     head() {
         return {
+            title: 'theNa197 | Home',
             meta: [
-                { hid: 'og:image', 'property': 'og:image', 'content': this.BASE_URL + thenaOG },
                 {
-                    'property': 'og:title',
-                    'content': `theNa197`,
+                    hid: 'og:title',
+                    name: 'og:title',
+                    content: 'theNa197 | Home',
                 },
-            ]
+                {
+                    hid: 'og:type',
+                    name: 'og:type',
+                    content: 'website',
+                },
+                {
+                    hid: 'og:image',
+                    name: 'og:image',
+                    content: 'https://thena197.netlify.app/_nuxt/img/thena197-profile.40e6fbd.jpg',
+                },
+                {
+                    hid: 'og:description',
+                    name: 'og:description',
+                    content:
+                        'theNa197 Portfolio',
+                },
+            ],
         }
-    }
+    },
 };
 </script>
   

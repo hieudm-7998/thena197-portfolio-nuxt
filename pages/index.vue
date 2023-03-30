@@ -49,7 +49,6 @@
 
 <script>
 import { FacebookIcon, InstagramIcon } from 'vue-feather-icons'
-import OGImage from '~/static/profile/thena197-profile.jpg'
 
 export default {
     name: 'IndexPage',
@@ -71,7 +70,7 @@ export default {
                 {
                     hid: 'og:image',
                     name: 'og:image',
-                    content: OGImage,
+                    content: 'https://thena197.netlify.app/_nuxt/img/thena197-profile.40e6fbd.jpg',
                 },
                 {
                     hid: 'og:description',
