@@ -15,7 +15,11 @@ export default {
     head() {
         return {
             meta: [
-                { hid: 'og:image', property: 'og:image', content: this.BASE_URL + thenaOG }
+                { hid: 'og:image', 'property': 'og:image', 'content': this.BASE_URL + thenaOG },
+                {
+                    'property': 'og:title',
+                    'content': `theNa197`,
+                },
             ]
         }
     }
