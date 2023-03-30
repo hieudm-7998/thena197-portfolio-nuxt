@@ -11,7 +11,7 @@
             class="text-lg hover:text-cyan-800"
           >
             <img
-              :v-lazy="photo.thumbnail"
+              :src="photo.thumbnail"
               alt=""
               class="object-cover w-full rounded-lg mb-3"
             />
