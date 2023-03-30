@@ -49,12 +49,38 @@
 
 <script>
 import { FacebookIcon, InstagramIcon } from 'vue-feather-icons'
+import OGImage from '~/static/profile/thena197-profile.jpg'
 
 export default {
     name: 'IndexPage',
     transitions: "fade",
     head() {
-        return { title: `theNa197 | Home` }
+        return {
+            title: 'theNa197 | Home',
+            meta: [
+                {
+                    hid: 'og:title',
+                    name: 'og:title',
+                    content: 'theNa197 | Home',
+                },
+                {
+                    hid: 'og:type',
+                    name: 'og:type',
+                    content: 'website',
+                },
+                {
+                    hid: 'og:image',
+                    name: 'og:image',
+                    content: OGImage,
+                },
+                {
+                    hid: 'og:description',
+                    name: 'og:description',
+                    content:
+                        'theNa197 Portfolio',
+                },
+            ],
+        }
     },
     components: { FacebookIcon, InstagramIcon }
 }
