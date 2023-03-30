@@ -10,7 +10,16 @@
 </template>
   
 <script>
-export default {};
+import thenaOG from '~/static/profile/thena197-profile.jpg'
+export default {
+    head() {
+        return {
+            meta: [
+                { hid: 'og:image', property: 'og:image', content: this.BASE_URL + thenaOG }
+            ]
+        }
+    }
+};
 </script>
   
 <style>

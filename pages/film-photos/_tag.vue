@@ -13,8 +13,25 @@ import CustomMasonry from '~/components/CustomMasonry.vue';
 
 export default {
     head() {
-        return { title: `theNa197 | ${this.filteredAlbum.title}` }
+        return {
+            title: `theNa197 | ${this.filteredAlbum.title}`,
+            meta: [
+                {
+                    'property': 'og:title',
+                    'content': `theNa197 | ${this.filteredAlbum.title}`,
+                },
+                {
+                    'property': 'og:description',
+                    'content': `theNa197 | ${this.filteredAlbum.description}`.replace(/<\/?[^>]+(>|$)/g, ""),
+                },
+                {
+                    'property': 'og:image',
+                    'content': `${filteredAlbum.thumbnail}`
+                }
+            ],
+        }
     },
+
     name: 'FilmPhotos',
     transitions: "fade",
     components: { CustomMasonry },
