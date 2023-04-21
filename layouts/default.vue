@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="bg-white dark:bg-gray-900 h-screen transition">
+    <div id="app" class="bg-white h-screen transition">
         <div class="container">
             <Header />
             <transition name="fade">
